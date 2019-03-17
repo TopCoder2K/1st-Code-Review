@@ -5,7 +5,8 @@ from src.Config import Config
 
 
 def main():
-    display = pygame.display.set_mode((Config['game']['width'], Config['game']['height']))
+    display = pygame.display.set_mode((Config['game']['width'],
+                                       Config['game']['height']))
     pygame.display.set_caption(Config['game']['caption'])
 
     game = Game(display)

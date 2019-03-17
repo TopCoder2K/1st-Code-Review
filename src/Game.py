@@ -11,7 +11,8 @@ class Game:
         self.score = 0
 
     def loop(self):
-        # This is class that will help us to track amount of time or to manage framerate.
+        # This is class that will help us
+        # to track amount of time or to manage framerate.
         clock = pygame.time.Clock()
 
         # Fonts.
@@ -60,7 +61,8 @@ class Game:
 
                 print(event)
 
-            # Fills the entire screen with the green color and than places black "background".
+            # Fills the entire screen with the green color
+            # and than places black "background".
             self.display.fill(Config['colors']['green'])
 
             pygame.draw.rect(
@@ -82,12 +84,13 @@ class Game:
             # Collisions with the wall.
             bumper_x = Config['game']['width'] - Config['game']['bumper_size']
             bumper_y = Config['game']['height'] - Config['game']['bumper_size']
+            speed = 2 * Config['snake']['speed']
 
             if (
-                snake.x_pos < Config['game']['bumper_size'] or
-                snake.y_pos < Config['game']['bumper_size'] or
-                snake.x_pos + Config['snake']['width'] > bumper_x or
-                snake.y_pos + Config['snake']['height'] > bumper_y
+                snake.x_pos + speed < Config['game']['bumper_size'] or
+                snake.y_pos + speed < Config['game']['bumper_size'] or
+                snake.x_pos + Config['snake']['width'] - speed > bumper_x or
+                snake.y_pos + Config['snake']['height'] - speed > bumper_y
             ):
                 self.loop()
 
@@ -119,5 +122,6 @@ class Game:
 
             pygame.display.update()
 
-            # Tracks how many frames we have rendered. Uses pygame.time.delay, so it's very precise
+            # Tracks how many frames we have rendered.
+            # Uses pygame.time.delay, so it's very precise
             clock.tick_busy_loop(Config['game']['fps'])
