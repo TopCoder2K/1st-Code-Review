@@ -5,13 +5,13 @@ Config = {
         'caption': 'Anaconda',
         'height': 600,
         'width': 600,
-        'fps': 120,
+        'fps': 5,
         'bumper_size': 25
     },
     'snake': {
         'height': 20,
         'width': 20,
-        'speed': 2
+        'speed': 20
     },
     'apple': {
         'width': 20,
