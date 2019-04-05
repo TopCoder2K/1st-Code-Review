@@ -20,11 +20,16 @@ class Apple:
         height = Config['game']['height']
         bumper = Config['game']['bumper_size']
 
-        max_x = (width - bumper - Config['apple']['width'])
-        max_y = (height - bumper - Config['apple']['height'])
+        max_x = width - bumper - Config['apple']['width']
+        max_y = height - bumper - Config['apple']['height']
+
+        # max_x = (width - Config['apple']['width'])
+        # max_y = (height - Config['apple']['height'])
 
         self.x_pos = random.randint(bumper, max_x)
         self.y_pos = random.randint(bumper, max_y)
+        # self.x_pos = random.randint(0, max_x)
+        # self.y_pos = random.randint(0, max_y)
 
     def draw(self):
         return pygame.draw.rect(
